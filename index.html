@@ -825,50 +825,48 @@
 
     <script>
         // Mobile menu toggle
-        document   文档.getElementById('mobile-menu-button').addEventListener('click'   “点击”, function   函数() {
-            const   常量 menu   菜单 = document   文档.getElementById('mobile-menu');
-            if   如果 (menu   菜单.classList   班级名册.contains   包含('hidden'   “隐藏”)) {
-                menu   菜单.classList   班级名册.remove   删除('hidden'   “隐藏”);
-            }   好 else   其他 {
-                menu   菜单.classList   班级名册.add   添加('hidden'   “隐藏”);
-            }   好
-        }   好);
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
 
         // Smooth scrolling for anchor links
-        document   文档.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click'   “点击”, function   函数 (e) {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 
-                const   常量 targetId = this.getAttribute('href');
-                if   如果 (targetId === '#') return   返回;
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
                 
-                const   常量 targetElement = document   文档.querySelector(targetId);
-                if   如果 (targetElement) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
                     window.scrollTo({
-                        top   前: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
-                    }   好);
+                    });
                     
                     // Close mobile menu if open
-                    const   常量 mobileMenu = document   文档.getElementById('mobile-menu');
-                    if   如果 (!mobileMenu.classList   班级名册.contains   包含('hidden'   “隐藏”)) {
-                        mobileMenu.classList   班级名册.add   添加('hidden'   “隐藏”);
-                    }   好
-                }   好
-            }   好);
-        }   好);
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
 
         // Add shadow to navbar on scroll
-        window.addEventListener('scroll', function   函数() {
-            const   常量 nav = document   文档.querySelector('nav');
-            if   如果 (window.scrollY > 10) {
-                nav.classList   班级名册.add   添加('shadow-lg');
-            }   好 else   其他 {
-                nav.classList   班级名册.remove   删除('shadow-lg');
-            }   好
-        }   好);
-       > < /脚本</script   脚本>
-</body>
-         </html>
-
-      
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=phonecardcgc/aitool" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
