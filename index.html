@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Toolkit - Powerful AI Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+        .animated-text {
+            background: linear-gradient(90deg, #ff8a00, #e52e71, #6e8efb);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 8s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .wave-shape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave-shape svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+        .wave-shape .shape-fill {
+            fill: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-robot text-2xl text-purple-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">AI<span class="text-purple-600">Toolkit</span></span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#" class="border-purple-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                        <a href="#features" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Features</a>
+                        <a href="#tools" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Tools</a>
+                        <a href="#pricing" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Pricing</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Get Started</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden sm:hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#" class="bg-purple-50 border-purple-500 text-purple-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
+                <a href="#features" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Features</a>
+                <a href="#tools" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Tools</a>
+                <a href="#pricing" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Pricing</a>
+                <div class="mt-4 pl-3">
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium w-full transition duration-300">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="gradient-bg pt-24 pb-32 relative overflow-hidden">
+        <div class="wave-shape">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+                    <h1 class="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:leading-none lg:mt-6 lg:text-5xl xl:text-6xl">
+                        <span class="animated-text">Supercharge</span> Your Workflow With AI
+                    </h1>
+                    <p class="mt-3 text-base text-purple-100 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        Our AI-powered tools help you automate tasks, generate content, analyze data, and much more with just a few clicks.
+                    </p>
+                    <div class="mt-8 sm:mt-12 sm:flex sm:justify-center lg:justify-start">
+                        <div class="rounded-md shadow">
+                            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-purple-700 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 transition duration-300">
+                                Try for free
+                            </a>
+                        </div>
+                        <div class="mt-3 sm:mt-0 sm:ml-3">
+                            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-800 bg-opacity-60 hover:bg-opacity-70 md:py-4 md:text-lg md:px-10 transition duration-300">
+                                Watch demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
+                    <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
+                        <div class="relative block w-full bg-white rounded-lg overflow-hidden">
+                            <div class="h-64 bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+                                <i class="fas fa-brain text-white text-8xl opacity-75"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-medium text-gray-900">AI Content Generator</h3>
+                                <p class="mt-2 text-sm text-gray-500">Generate high-quality content in seconds with our advanced AI models.</p>
+                                <div class="mt-4">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-check-circle text-green-500"></i>
+                                        </div>
+                                        <div class="ml-3 text-sm text-gray-500">
+                                            <p>No credit card required</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center mt-2">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-check-circle text-green-500"></i>
+                                        </div>
+                                        <div class="ml-3 text-sm text-gray-500">
+                                            <p>Free trial available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-purple-600 font-semibold tracking-wide uppercase">Features</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    A better way to work with AI
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Our platform provides powerful AI tools that integrate seamlessly into your workflow.
+                </p>
+            </div>
+
+            <div class="mt-20">
+                <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Feature 1 -->
+                    <div class="feature-card relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
+                            <i class="fas fa-bolt feature-icon text-xl"></i>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Lightning Fast</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Our AI models process requests in milliseconds, delivering results faster than you can blink.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
+                            <i class="fas fa-shield-alt feature-icon text-xl"></i>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Secure & Private</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Enterprise-grade security ensures your data remains confidential and protected at all times.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
+                            <i class="fas fa-chart-line feature-icon text-xl"></i>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Smart Analytics</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Get insights into your AI usage with detailed analytics and performance metrics.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
+                            <i class="fas fa-random feature-icon text-xl"></i>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Multi-Model</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Choose from multiple AI models optimized for different tasks and quality levels.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="feature-card relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
+                            <i class="fas fa-code feature-icon text-xl"></i>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Developer API</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Full API access allows seamless integration with your existing applications and workflows.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="feature-card relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
+                            <i class="fas fa-headset feature-icon text-xl"></i>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">24/7 Support</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Our team of AI experts is available around the clock to assist with any questions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tools Section -->
+    <div id="tools" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-purple-600 font-semibold tracking-wide uppercase">Our AI Tools</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Powerful AI at your fingertips
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Choose from our growing collection of specialized AI tools.
+                </p>
+            </div>
+
+            <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Tool 1 -->
+                <div class="tool-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-purple-100 rounded-md p-3">
+                                <i class="fas fa-pen-fancy text-purple-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Content Generator</h3>
+                                <p class="mt-1 text-sm text-gray-500">Create engaging content in seconds</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-base text-gray-600">
+                                Generate blog posts, product descriptions, social media content and more with our advanced language models.
+                            </p>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#" class="text-purple-600 hover:text-purple-500 font-medium text-sm">
+                                Try now <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 2 -->
+                <div class="tool-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-purple-100 rounded-md p-3">
+                                <i class="fas fa-image text-purple-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Image Creator</h3>
+                                <p class="mt-1 text-sm text-gray-500">Generate stunning visuals</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-base text-gray-600">
+                                Create unique images, illustrations, and designs from text descriptions with our AI art generator.
+                            </p>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#" class="text-purple-600 hover:text-purple-500 font-medium text-sm">
+                                Try now <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 3 -->
+                <div class="tool-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-purple-100 rounded-md p-3">
+                                <i class="fas fa-code text-purple-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Code Assistant</h3>
+                                <p class="mt-1 text-sm text-gray-500">Write better code faster</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-base text-gray-600">
+                                Get AI-powered suggestions, debugging help, and code explanations in multiple programming languages.
+                            </p>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#" class="text-purple-600 hover:text-purple-500 font-medium text-sm">
+                                Try now <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 4 -->
+                <div class="tool-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-purple-100 rounded-md p-3">
+                                <i class="fas fa-chart-bar text-purple-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Data Analyzer</h3>
+                                <p class="mt-1 text-sm text-gray-500">Extract insights from data</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-base text-gray-600">
+                                Upload your datasets and let our AI identify patterns, trends, and generate visualizations automatically.
+                            </p>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#" class="text-purple-600 hover:text-purple-500 font-medium text-sm">
+                                Try now <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 5 -->
+                <div class="tool-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-purple-100 rounded-md p-3">
+                                <i class="fas fa-language text-purple-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Language Translator</h3>
+                                <p class="mt-1 text-sm text-gray-500">Break language barriers</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-base text-gray-600">
+                                Translate text between 100+ languages while preserving context, tone, and cultural nuances.
+                            </p>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#" class="text-purple-600 hover:text-purple-500 font-medium text-sm">
+                                Try now <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 6 -->
+                <div class="tool-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-purple-100 rounded-md p-3">
+                                <i class="fas fa-robot text-purple-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Chat Assistant</h3>
+                                <p class="mt-1 text-sm text-gray-500">Your AI conversation partner</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-base text-gray-600">
+                                Engage in natural conversations, get answers to questions, brainstorm ideas, and more.
+                            </p>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#" class="text-purple-600 hover:text-purple-500 font-medium text-sm">
+                                Try now <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-300">
+                    Explore all tools
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div id="pricing" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-purple-600 font-semibold tracking-wide uppercase">Pricing</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Simple, transparent pricing
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Choose the plan that works best for your needs.
+                </p>
+            </div>
+
+            <div class="mt-16 space-y-8 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
+                <!-- Free Tier -->
+                <div class="flex flex-col rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <div class="px-6 py-8 bg-white">
+                        <h3 class="text-2xl font-medium text-gray-900">Free</h3>
+                        <p class="mt-4 text-gray-500">Perfect for trying out our basic features</p>
+                        <div class="mt-6">
+                            <p class="text-4xl font-extrabold text-gray-900">$0</p>
+                            <p class="mt-2 text-sm text-gray-500">forever</p>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full flex justify-center items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition duration-300">
+                                Get started
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">10 AI requests per day</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Basic AI models</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Community support</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-times text-gray-400"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-500 line-through">API access</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-times text-gray-400"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-500 line-through">Priority support</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pro Tier -->
+                <div class="flex flex-col rounded-lg shadow-lg overflow-hidden border-2 border-purple-600 transform scale-105">
+                    <div class="px-6 py-8 bg-white">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-2xl font-medium text-gray-900">Pro</h3>
+                                <p class="mt-4 text-gray-500">For individuals and small teams</p>
+                            </div>
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+                                Popular
+                            </span>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-4xl font-extrabold text-gray-900">$29</p>
+                            <p class="mt-2 text-sm text-gray-500">per month</p>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-300">
+                                Get started
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">500 AI requests per month</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Advanced AI models</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Email support</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Basic API access</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-times text-gray-400"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-500 line-through">Priority support</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Enterprise Tier -->
+                <div class="flex flex-col rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <div class="px-6 py-8 bg-white">
+                        <h3 class="text-2xl font-medium text-gray-900">Enterprise</h3>
+                        <p class="mt-4 text-gray-500">For businesses with high-volume needs</p>
+                        <div class="mt-6">
+                            <p class="text-4xl font-extrabold text-gray-900">$99</p>
+                            <p class="mt-2 text-sm text-gray-500">per month</p>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full flex justify-center items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition duration-300">
+                                Get started
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Unlimited AI requests</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Premium AI models</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">24/7 priority support</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Full API access</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check text-green-500"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">Dedicated account manager</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-purple-50 rounded-lg p-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+                    <div>
+                        <h3 class="text-2xl font-medium text-gray-900">Need something custom?</h3>
+                        <p class="mt-4 text-lg text-gray-500">
+                            We offer custom plans for organizations with specific requirements.
+                        </p>
+                    </div>
+                    <div class="mt-8 lg:mt-0 flex items-center">
+                        <button class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-300">
+                            Contact sales
+                            <i class="fas fa-envelope ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="py-16 bg-gradient-to-r from-purple-500 to-pink-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                    Trusted by thousands of users worldwide
+                </h2>
+            </div>
+
+            <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Testimonial 1 -->
+                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-white">Sarah Johnson</h4>
+                            <p class="text-purple-100">Marketing Director</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-purple-50">
+                            "The content generator has saved our team countless hours. We can now produce high-quality blog posts in minutes instead of days."
+                        </p>
+                    </div>
+                    <div class="mt-4 flex">
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/43.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-white">Michael Chen</h4>
+                            <p class="text-purple-100">Software Engineer</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-purple-50">
+                            "The code assistant is like having a senior developer looking over my shoulder. It catches bugs before they happen and suggests better implementations."
+                        </p>
+                    </div>
+                    <div class="mt-4 flex">
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-white">Emma Rodriguez</h4>
+                            <p class="text-purple-100">E-commerce Owner</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-purple-50">
+                            "The image creator has transformed our product photography. We can now generate professional-looking product images without expensive photoshoots."
+                        </p>
+                    </div>
+                    <div class="mt-4 flex">
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star-half-alt text-yellow-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <div class="bg-purple-700 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+                <div class="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
+                    <div class="lg:self-center">
+                        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                            <span class="block">Ready to boost your productivity?</span>
+                            <span class="block">Start your free trial today.</span>
+                        </h2>
+                        <p class="mt-4 text-lg leading-6 text-purple-200">
+                            No credit card required. Get full access to all our AI tools for 14 days.
+                        </p>
+                        <div class="mt-8 flex">
+                            <div class="inline-flex rounded-md shadow">
+                                <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-purple-600 bg-white hover:bg-purple-50 transition duration-300">
+                                    Get started
+                                </a>
+                            </div>
+                            <div class="ml-3 inline-flex rounded-md shadow">
+                                <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-800 bg-opacity-60 hover:bg-opacity-70 transition duration-300">
+                                    Live demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
+                    <div class="transform translate-x-6 translate-y-6">
+                        <div class="bg-purple-600 bg-opacity-30 rounded-lg p-6 backdrop-filter backdrop-blur-lg">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 bg-purple-800 rounded-md p-2">
+                                    <i class="fas fa-robot text-white text-xl"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="text-lg font-medium text-white">AI Content Generator</h3>
+                                    <p class="mt-1 text-sm text-purple-200">Generate content in seconds</p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="bg-purple-900 bg-opacity-50 rounded-md p-4">
+                                    <p class="text-sm text-purple-100 italic">"Write a product description for a wireless Bluetooth headset with noise cancellation..."</p>
+                                </div>
+                                <div class="mt-2 bg-white rounded-md p-4">
+                                    <p class="text-sm text-gray-800">"Experience crystal-clear audio with our premium wireless Bluetooth headset featuring advanced noise cancellation technology..."</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 flex justify-end">
+                                <button class="text-sm font-medium text-purple-200 hover:text-white transition duration-300">
+                                    Copy <i class="fas fa-copy ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Product</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">Features</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">Pricing</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">API</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">Blog</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">Careers</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">Privacy</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">Terms</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">Cookie Policy</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">GDPR</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Connect</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">Twitter</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">LinkedIn</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">GitHub</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white transition duration-300">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between">
+                <div class="flex items-center">
+                    <i class="fas fa-robot text-2xl text-purple-600 mr-2"></i>
+                    <span class="text-xl font-bold text-white">AI<span class="text-purple-400">Toolkit</span></span>
+                </div>
+                <p class="mt-4 md:mt-0 text-base text-gray-400">
+                    &copy; 2023 AI Toolkit. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document   文档.getElementById('mobile-menu-button').addEventListener('click'   “点击”, function   函数() {
+            const   常量 menu   菜单 = document   文档.getElementById('mobile-menu');
+            if   如果 (menu   菜单.classList   班级名册.contains   包含('hidden'   “隐藏”)) {
+                menu   菜单.classList   班级名册.remove   删除('hidden'   “隐藏”);
+            }   好 else   其他 {
+                menu   菜单.classList   班级名册.add   添加('hidden'   “隐藏”);
+            }   好
+        }   好);
+
+        // Smooth scrolling for anchor links
+        document   文档.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click'   “点击”, function   函数 (e) {
+                e.preventDefault();
+                
+                const   常量 targetId = this.getAttribute('href');
+                if   如果 (targetId === '#') return   返回;
+                
+                const   常量 targetElement = document   文档.querySelector(targetId);
+                if   如果 (targetElement) {
+                    window.scrollTo({
+                        top   前: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    }   好);
+                    
+                    // Close mobile menu if open
+                    const   常量 mobileMenu = document   文档.getElementById('mobile-menu');
+                    if   如果 (!mobileMenu.classList   班级名册.contains   包含('hidden'   “隐藏”)) {
+                        mobileMenu.classList   班级名册.add   添加('hidden'   “隐藏”);
+                    }   好
+                }   好
+            }   好);
+        }   好);
+
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function   函数() {
+            const   常量 nav = document   文档.querySelector('nav');
+            if   如果 (window.scrollY > 10) {
+                nav.classList   班级名册.add   添加('shadow-lg');
+            }   好 else   其他 {
+                nav.classList   班级名册.remove   删除('shadow-lg');
+            }   好
+        }   好);
+       > < /脚本</script   脚本>
+</body>
+         </html>
+
+      
